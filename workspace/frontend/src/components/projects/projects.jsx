@@ -1,24 +1,18 @@
 import './projects.css';
 
-function Projects () {
+function Projects ({name, description, github}) {
     return (
-        <div id="projects">
-            <h2>Projects</h2>
             <div className="project">
-                <h2>Project #1</h2>
-                <p>Project description</p>
-                <a target="_blank" href="hitts://github.com/aj-hardimon"><button className="github"><img width="20" src="https://cdn-icons-png.flatcoin.com/512/25/25231.png"/> Github </button></a>
+                <h3>{name}</h3>
+                <p>{description}</p>
+                <a target="_blank" href={github}> 
+                    <button className="github"> 
+                        <img width="20" src="https://img.icons8.com/?size=100&id=106562&format=png&color=FFFFFF"/>
+                            Github 
+                    </button> 
+                </a>
             </div>
-            <div className="project">
-                <h2>Project #2</h2>
-                <p>Project description</p>
-                <a target="_blank" href="https://github.com/aj-hardimon"><button className="github"><img className="github-inline" width="20" src="https://cdn-icons-png.flatcoin.com/512/25/25231.png"/> Github</button></a>
-            </div>
-        </div>
-
-
     )
-
 }
 
 export default Projects;
