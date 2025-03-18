@@ -27,7 +27,7 @@ function About() {
             </h2>
             <div style={{display: display}}>
                 <p>
-                    I'm a student at Boston University studying [major]. I'm currently a member of [organization]. I'm excited to learn more about [topic]. I have experience in [skill 1], [skill 2], and [skill 3]. Feel free to contact me at yourEmailHere@gmail.com!
+                    I'm a student at Boston University studying Computer Science. I'm currently a member of hack4impact. I'm excited to learn more about react. I have experience in Python, Java, and HTML. Feel free to contact me at ajh756@bu.edu!
                 </p>
                 <br/>
                 <h3>My Skills</h3>
