@@ -1,9 +1,8 @@
-import Navbar from './components/navbar/navbar';
-import Profile from './components/profile/profile';
-import Projects from './components/projects/projects';
-import Experiences from './components/experiences/experiences';
-import About from './components/about/about';
-
+import Navbar from './components/navbar/navbar'
+import Profile from './components/profile/profile'
+import Projects from './components/projects/projects'
+import Experiences from './components/experiences/experiences'
+import About from './components/about/about'
 import './App.css'
 
 function App() {
