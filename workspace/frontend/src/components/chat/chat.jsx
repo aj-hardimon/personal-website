@@ -7,7 +7,7 @@ function Chat() {
     async function getResponse() {
         try{
             if(!userInput) return
-            const response = await fetch('https://localhost:4000/chat', {
+            const response = await fetch('http://localhost:4000/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -27,7 +27,23 @@ function Chat() {
 
     return (
         <div id="chat">
-            <p>Coming Soon!</p>
+            <form onSubmit={(e) => e.preventDefault()}>
+                <h2>Ask me a question</h2>
+                <input  type='text' 
+                        name='user-input' 
+                        id='questionInput' 
+                        placeholder='What would you like to ask?'
+                        onChange={e => setUserInput(e.target.value)}
+                    />
+                    <button type='submit' onClick={getResponse}>Submit</button>
+            </form>
+            {
+                messages.map((text, index) => (
+                    <div key={index} className='chatbox'>
+                        <p className={index % 2 == 0 ? 'user-message' : 'chatbotResponse'}>{text}</p>
+                    </div>
+                ))
+            }
         </div>
     )
 }
