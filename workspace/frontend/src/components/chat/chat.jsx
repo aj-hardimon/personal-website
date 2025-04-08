@@ -33,6 +33,22 @@ function Chat() {
         }
     }
 
+    function deleteChatbox(index) {
+        let newMessages = [...messages]
+        newMessages.splice(index, 2)
+        fetch('http://localhost:4000/delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                input: messages[index],
+                response: messages[index + 1]
+            })    
+        })
+        setMessages(newMessages)
+    }
+
     useEffect(() => {
         fetch('http://localhost:4000/logs')
             .then(res => res.json())
@@ -61,9 +77,11 @@ function Chat() {
             </form>
             {
                 messages.map((text, index) => (
-                    <div key={index} className='chatbox'>
-                        <p className={index % 2 == 0 ? 'user-message' : 'chatbot-response'}>{text}</p>
+                    <div key={index} className="chatbox">
+                        {index % 2 == 0 && <button className="x" onClick={() => deleteChatbox(index)}>X</button>}
+                        <p className={index % 2 == 0 ? "user-message" : "chatbot-response"}>{text}</p>
                     </div>
+
                 ))
             }
         </div>
