@@ -8,7 +8,7 @@ function Chat() {
     async function getResponse() {
         try {
             if (!userInput) return
-            const response = await fetch('https://git.heroku.com/aj-hardimon-personal-website.git/chat', {
+            const response = await fetch('https://git.heroku.com/warm-fjord-88704.git/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ function Chat() {
                 throw new Error('Oops, something went wrong!')
             }
             const { message } = await response.json()
-            fetch('https://git.heroku.com/aj-hardimon-personal-website.git/add', {
+            fetch('https://git.heroku.com/warm-fjord-88704.git/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ function Chat() {
     function deleteChatbox(index) {
         let newMessages = [...messages]
         newMessages.splice(index, 2)
-        fetch('https://git.heroku.com/aj-hardimon-personal-website.git/delete', {
+        fetch('https://git.heroku.com/warm-fjord-88704.git/delete', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ function Chat() {
     }
 
     useEffect(() => {
-        fetch('https://git.heroku.com/aj-hardimon-personal-website.git/logs')
+        fetch('https://git.heroku.com/warm-fjord-88704.git/logs')
             .then(res => res.json())
             .then(data => {
                 let newMessages = []
