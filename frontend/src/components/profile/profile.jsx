@@ -1,5 +1,5 @@
 import './profile.css';
-import ProfileIcon from 'C:/Users/ahard/Documents/GitHub/JDT-spring-25-beta/frontend/src/assets/profile-icon.png';
+import ProfileIcon from '../../assets/profile-icon.png';
 
 function Profile (){
     return (
