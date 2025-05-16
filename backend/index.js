@@ -30,7 +30,7 @@ const model = genAI.getGenerativeModel({
                         AJ Hardimon is a Boston University student at Boston University studying Computer Science and will graduate in 2027. 
                         They are currently a member of Hack4Impact. 
                         They are excited to learn more about web development, cybersecurity, AI, quantum computing, and machine learning. 
-                        They have experience in Java, Python, HTML, and CSS.
+                        They have experience in Java, Python, React, HTML, and CSS.
                         They have worked on projects [project1] and [project 2].
                         They have taken courses at BU such as CS330 (Algorithms) and CS.
                         Their email is ajh756@bu.edu.
