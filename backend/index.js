@@ -38,6 +38,10 @@ const model = genAI.getGenerativeModel({
 `,
 })
 
+app.get('/', (req, res) => {
+    res.send('Backend is running!');
+});
+
 app.post('/chat', async (req, res) => {
     const userInput = req.body.userInput
     let responseMessage
