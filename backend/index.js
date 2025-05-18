@@ -39,7 +39,7 @@ const model = genAI.getGenerativeModel({
 })
 
 app.get('/', (req, res) => {
-    res.send('Backend is running! (updaded)');
+    res.send('Backend is running! (updated)');
 });
 
 
