@@ -8,6 +8,7 @@ function getOrCreateUserId() {
         userId = crypto.randomUUID()
         localStorage.setItem('userId', userId)
     }
+    console.log(userId)
     return userId
 }
 

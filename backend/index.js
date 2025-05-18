@@ -68,6 +68,10 @@ app.get('/logs', async (req, res) => {
             return res.status(400).json({ message: 'Missing userId' })
         }
         const logs = await mongoclient.db('jdt-website').collection('logs').find({ userId }).toArray()
+        console.log(logs)
+        if (!logs) {
+            return res.status(404).json({ message: 'No logs found' })
+        }
         res.status(200).json(logs)
     } catch (error) {
         console.error(error)
