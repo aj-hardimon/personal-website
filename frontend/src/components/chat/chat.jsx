@@ -8,7 +8,7 @@ function Chat() {
     async function getResponse() {
         try {
             if (!userInput) return
-            const response = await fetch('https://aj-hardimon-personal-website.herokuapp.com/chat', {
+            const response = await fetch('https://aj-hardimon-personal-website-2b2801802b8c.herokuapp.com/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ function Chat() {
                 throw new Error('Oops, something went wrong!')
             }
             const { message } = await response.json()
-            fetch('https://aj-hardimon-personal-website.herokuapp.com/add', {
+            fetch('https://aj-hardimon-personal-website-2b2801802b8c.herokuapp.com/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ function Chat() {
     function deleteChatbox(index) {
         let newMessages = [...messages]
         newMessages.splice(index, 2)
-        fetch('https://aj-hardimon-personal-website.herokuapp.com/delete', {
+        fetch('https://aj-hardimon-personal-website-2b2801802b8c.herokuapp.com/delete', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ function Chat() {
     }
 
     useEffect(() => {
-        fetch('https://aj-hardimon-personal-website.herokuapp.com/logs')
+        fetch('https://aj-hardimon-personal-website-2b2801802b8c.herokuapp.com/logs')
             .then(res => res.json())
             .then(data => {
                 let newMessages = []
