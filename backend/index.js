@@ -39,7 +39,7 @@ const model = genAI.getGenerativeModel({
 })
 
 app.get('/', (req, res) => {
-    res.send('Backend is running!');
+    res.send('Backend is running! (updaded)');
 });
 
 
@@ -82,7 +82,11 @@ app.get('/logs', async (req, res) => {
 app.post('/add', async (req, res) => {
     try {
         const log = req.body
-        if (!log.input || !log.response || !log.userId || Object.keys(log).length !== 3) {
+        if (
+            typeof log.input !== 'string' ||
+            typeof log.response !== 'string' ||
+            typeof log.userId !== 'string'
+        ) {
             res.status(400).json({ message: 'Bad Request' })
             return
         }
@@ -98,7 +102,11 @@ app.post('/add', async (req, res) => {
 app.post('/delete', async (req, res) => {
     try {
         const log = req.body
-        if (!log.input || !log.response || !log.userId || Object.keys(log).length !== 3) {
+        if (
+            typeof log.input !== 'string' ||
+            typeof log.response !== 'string' ||
+            typeof log.userId !== 'string'
+        ) {
             res.status(400).json({ message: 'Bad Request' })
             return
         }
