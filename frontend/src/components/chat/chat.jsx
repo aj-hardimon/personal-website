@@ -1,9 +1,20 @@
 import { useState, useEffect } from 'react'
 import './chat.css'
 
+// gets userid from local storage for fetching logs
+function getOrCreateUserId() {
+    let userId = localStorage.getItem('userId')
+    if (!userId) {
+        userId = crypto.randomUUID()
+        localStorage.setItem('userId', userId)
+    }
+    return userId
+}
+
 function Chat() {
     const [messages, setMessages] = useState([])
     const [userInput, setUserInput] = useState('')
+    const userId = getOrCreateUserId()
 
     async function getResponse() {
         try {
@@ -13,7 +24,7 @@ function Chat() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ userInput })
+                body: JSON.stringify({ userInput, userId })
             })
             if (!response.ok) {
                 throw new Error('Oops, something went wrong!')
@@ -24,7 +35,7 @@ function Chat() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ input: userInput, response: message })
+                body: JSON.stringify({ input: userInput, response: message, userId })
             })
             setMessages([...messages, userInput, message])
         } catch (error) {
@@ -43,14 +54,15 @@ function Chat() {
             },
             body: JSON.stringify({
                 input: messages[index],
-                response: messages[index + 1]
+                response: messages[index + 1],
+                userId
             })    
         })
         setMessages(newMessages)
     }
 
     useEffect(() => {
-        fetch('https://aj-hardimon-personal-website-2b2801802b8c.herokuapp.com/logs')
+        fetch(`https://aj-hardimon-personal-website-2b2801802b8c.herokuapp.com/logs?userId=${userId}`)
             .then(res => res.json())
             .then(data => {
                 let newMessages = []
@@ -60,7 +72,7 @@ function Chat() {
                 }
                 setMessages(newMessages)
             })
-    }, [])
+    }, [userId])
 
     return (
         <div id="chat">

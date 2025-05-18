@@ -42,6 +42,7 @@ app.get('/', (req, res) => {
     res.send('Backend is running!');
 });
 
+
 app.post('/chat', async (req, res) => {
     const userInput = req.body.userInput
     let responseMessage
@@ -62,7 +63,11 @@ app.listen(PORT, () => {
 
 app.get('/logs', async (req, res) => {
     try {
-        const logs = await mongoclient.db('jdt-website').collection('logs').find({}).toArray()
+        const userId = req.query.userId
+        if (!userId) {
+            return res.status(400).json({ message: 'Missing userId' })
+        }
+        const logs = await mongoclient.db('jdt-website').collection('logs').find({ userId }).toArray()
         res.status(200).json(logs)
     } catch (error) {
         console.error(error)
@@ -73,11 +78,12 @@ app.get('/logs', async (req, res) => {
 app.post('/add', async (req, res) => {
     try {
         const log = req.body
-        if (!log.input || !log.response || Object.keys(log).length !== 2) {
+        if (!log.input || !log.response || !log.userId || Object.keys(log).length !== 3) {
             res.status(400).json({ message: 'Bad Request' })
             return
         }
         await mongoclient.db('jdt-website').collection('logs').insertOne(log)
+        res.status(201).json({ message: 'Success' })
     } catch(error) {
         console.error(error)
         res.status(500).json({message: 'Error'})
@@ -88,7 +94,7 @@ app.post('/add', async (req, res) => {
 app.post('/delete', async (req, res) => {
     try {
         const log = req.body
-        if (!log.input || !log.response || Object.keys(log).length !== 2) {
+        if (!log.input || !log.response || !log.userId || Object.keys(log).length !== 3) {
             res.status(400).json({ message: 'Bad Request' })
             return
         }
