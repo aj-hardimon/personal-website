@@ -78,7 +78,7 @@ function Chat() {
     return (
         <div id="chat">
             <form onSubmit={(e) => e.preventDefault()}>
-                <h2>Ask Me A Question</h2>
+                <h2>Ask A Question</h2>
                 <input 
                     type='text' 
                     name='user-input' 

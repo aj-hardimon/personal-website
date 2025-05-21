@@ -27,7 +27,10 @@ function About() {
             </h2>
             <div style={{display: display}}>
                 <p>
-                    I'm a student at Boston University studying Computer Science. I'm currently a member of hack4impact. I'm excited to learn more about react. I have experience in Python, Java, and HTML. Feel free to contact me at ajh756@bu.edu!
+                    Hello! My name is Anthony, although I go by AJ. I'm a student at Boston University studying Computer Science. I'm currently a member of hack4impact and I attend a few hackathons every year. 
+                    I have experience in python, java, HTML, CSS, JavaScript, and React. I am excited to learn more about AI/Machine learning, quantum computing, and data science. 
+                    I spend my free time playing games like Dungeons & Dragons, rock climbing, and recently I have been learning how to cook and bake.
+                    Feel free to contact me at ajh756@bu.edu!
                 </p>
                 <br/>
                 <h3>My Skills</h3>

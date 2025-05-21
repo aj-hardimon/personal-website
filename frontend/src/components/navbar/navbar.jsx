@@ -4,9 +4,9 @@ function Navbar() {
     return (
         <div id="navbar">
             <h1>AJ Hardimon</h1>
-            <a href='#about'>About</a>
-            <a href='#projects'>Projects</a>
-            <a href='#exp'>Experiences</a>
+            <a href='#outline-about'>About</a>
+            <a href='#outline-projects'>Projects</a>
+            <a href='#outline-exp'>Experiences</a>
         </div>
     )
 }

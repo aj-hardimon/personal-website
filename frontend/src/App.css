@@ -1,18 +1,54 @@
 body {
   font-family: "Mina";
-  background-color: #e5d9f2;
-  color: #2e073f;
+  background-color: #0b0024;
+  color: #f6f4f9;
+}
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+#outline-chat,
+#outline-about,
+#outline-projects,
+#outline-exp {
+  background-image: radial-gradient(rgb(67, 0, 67) 50%, purple);
+  min-width: 980px;
+  width: 62%;
+  margin: 30px auto;
+  padding: 4px;
+  border-radius: 6px;
+  transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+  transition: all 1s;
+}
+
+#outline-chat:hover,
+#outline-about:hover,
+#outline-projects:hover,
+#outline-exp:hover,
+#outline-chat:focus-within,
+#outline-about:focus-within,
+#outline-projects:focus-within,
+#outline-exp:focus-within,
+#outline-chat:focus,
+#outline-about:focus,
+#outline-projects:focus,
+#outline-exp:focus {
+  box-shadow: 0px 0px 20px 4px #402a74;
 }
 
 #about,
 #chat,
 #projects,
 #exp {
-  width: 60%;
-  margin: 30px auto;
-  background-color: #f5efff;
-  padding: 30px;
+  width: 98.4%;
+  padding: 0.8%;
+  background-color: #f6f4f9;
   border-radius: 6px;
+  color: #2e073f;
 }
 
 #projects h2,
@@ -25,9 +61,29 @@ body {
   position: relative;
 }
 
+#projects h3,
+#about h3,
+#chat h3,
+#exp h3 {
+  font-size: 20px;
+}
+
+#projects h4,
+#about h4,
+#chat h4,
+#exp h4 {
+  font-size: 18px;
+}
+
+#exp li,
+#exp p,
+#projects p {
+  font-size: 17px;
+}
+
 .project,
 .job {
-  background: #e5d9f2;
+  background: #ccbce5;
   margin: 0 auto;
   margin-bottom: 30px;
   width: 75%;
@@ -37,6 +93,7 @@ body {
 #projects li,
 .job li {
   margin-left: 25px;
+
 }
 
 button {
@@ -44,7 +101,7 @@ button {
   border: 0.2rem solid #2e073f;
   border-radius: 0.2rem;
   background-color: #2e073f;
-  color: #e5d9f2;
+  color: #f6f4f9;
   font-size: 1.4rem;
   font-weight: bold;
   margin-top: 1rem;
@@ -53,6 +110,10 @@ button {
 }
 
 button:hover {
-  background-color: #e5d9f2;
+  background-color: #f6f4f9;
   color: #2e073f;
+}
+
+html {
+  scroll-padding-top: 160px;
 }

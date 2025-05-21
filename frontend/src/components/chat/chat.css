@@ -28,7 +28,7 @@
     padding: 10px;
     border-radius: 5px;
 }
-  
+
 .user-message {
     width: 50%;
     margin-left: auto;
@@ -37,7 +37,7 @@
     padding: 10px;
     border-radius: 5px;
 }
-  
+
 form {
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@ form {
 input::placeholder {
     color: #8d77ab;
 }
-  
+
 input[type="text"] {
     width: 100%;
     max-width: 400px;
@@ -58,7 +58,7 @@ input[type="text"] {
     background-color: #f5efff;
     color: #2e073f;
 }
-  
+
 input[type="text"]:focus {
     outline: none;
     border: 2px solid #2e073f;
