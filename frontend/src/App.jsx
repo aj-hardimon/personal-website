@@ -27,8 +27,8 @@ function App() {
                     />
                     <Projects 
                         name="Sundial" 
-                        description="Website that will grab the user's current location and will tell them the sunrise and sunset times for both their location and a location 
-                                    with similar sunset/sunrise times suggested by Google Gemini in a leaflet map element. Submission for the 2025 hakc4Impact tecchnical assesment." 
+                        description="Website that uses the user's current location and will tell them the sunrise and sunset times for both their location and a location 
+                                    with similar sunset/sunrise times suggested by Google Gemini in a leaflet map element. Submission for the 2025 hakc4Impact technical assessment." 
                         github="https://github.com/aj-hardimon/technical-assessment-25-26"/>
                 </div>
             </div>
