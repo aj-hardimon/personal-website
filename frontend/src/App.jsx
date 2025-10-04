@@ -21,6 +21,12 @@ function App() {
                 <div id="projects">
                     <h2>Projects</h2>
                     <Projects 
+                        name="Ecological Netork Simulator" 
+                        description="The Ecological Network Simulator is a python project that takes a list of input species and produces a network with species as nodes and edges conveying predator/prey relationships.
+
+Relations between species are determined by the Global Biotic Interactions (GloBI) API. Only the predator --> prey relationship is shown in graph examples, however the reverse is also supported through the get_prey_list and get_predator_list methods. Classification of species and their common names is provided by the iNaturalist API." 
+                        github="https://github.com/aj-hardimon/ecological-netork-simulator"/>
+                    <Projects 
                         name="YQuantum 2025 Travelers-Capgemini Challenge" 
                         description="Used a quantum graph-coloring algorithm on real world fire hazard zone data in L.A. County to minimize risk in fire insurance portfolios." 
                         github="https://github.com/aj-hardimon/yquantum-2025-travelers-capgemini"
